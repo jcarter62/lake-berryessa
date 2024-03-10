@@ -1,0 +1,6 @@
+fastapi
+python-decouple
+requests
+jinja2
+starlette
+uvicorn
