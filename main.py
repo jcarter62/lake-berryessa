@@ -40,7 +40,7 @@ async def get_level(request: Request):
         "current_level": current_level,
         "remaining_feet": round(till_spill,2),
         "remaining_inches": round(till_spill * 12,2),
-        "rain_required": rain_required
+        "rain_required": round(rain_required,2)
     }
 
     return templates.TemplateResponse("index.html", context)
