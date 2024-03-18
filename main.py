@@ -43,12 +43,10 @@ async def get_level(request: Request):
         "rain_required": round(rain_required,2)
     }
 
+    # determine client ip address
+    ip = request.client.host
+    # print the ip address and date + time of the request
+    print(f"{current_date} {ip} level:{current_level} remaining:{till_spill}ft {round(till_spill_inches,2)}in req:{round(rain_required,2)}in")
+
     return templates.TemplateResponse("index.html", context)
 
-    #     "index.html",
-    #     {
-    #         "spill_level": spill_level,
-    #         "current_date": current_date,
-    #         "current_level": current_level
-    #     }
-    # )
